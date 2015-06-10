@@ -1,0 +1,15 @@
+ using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+                {
+                    var data = (from a in db.QATransactions
+                                join b in db.QATransactionUsers on a.TransactionID equals b.TransactionID
+                                where a.CreateDate.Value.Date == dalDistributeDate.GetMaxDateCreateDate(SystemID)
+                                && b.UserID == UserID
+                                && a.SystemID == SystemID
+                                && b.EnableFlag == null
+                                select new ModelQATransaction
+                                {
+                                    UserID = b.UserID
+                                    ,TransactionID = b.TransactionID
+                                });
+                    return data.ToList<ModelQATransaction>();
+                }

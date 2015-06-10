@@ -1,0 +1,18 @@
+        public List<ModelPeriodDay> GetHoliday(DateTime MaxDateCreateDate)
+        {
+            dalDistributeDate DistributeDate = new DalQualityAssurance.dalDistributeDate();
+            List<ModelPeriodDay> PeriodMains = new List<ModelPeriodDay>();
+            string[] Daylist = new[] { "พฤหัส", "ศุกร์", "เสาร์", "อาทิตย์", "จันทร์", "อังคาร", "พุธ" };
+
+            for (int i = 0; i < Daylist.Length; i++)
+            {
+                PeriodMains.Add(new ModelPeriodDay { id = i, dateName = Daylist[i], datePeriod = MaxDateCreateDate.AddDays(i + 1) });
+            }
+            List<ModelHoliday> holiday = DistributeDate.getHoliday(MaxDateCreateDate);
+            holiday.Add(new ModelHoliday { holiday = 3 });//3 คือวันอาทิตย์
+            holiday.Add(new ModelHoliday { holiday = 6 });//6 คือวันพุธ
+
+            var data = PeriodMains.Where(a => !holiday.Any(b => a.id == b.holiday));
+
+            return data.ToList<ModelPeriodDay>();
+        }

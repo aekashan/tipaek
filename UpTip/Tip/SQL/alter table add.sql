@@ -1,0 +1,2 @@
+ALTER TABLE tele_upload
+ADD prequalifieddate datetime

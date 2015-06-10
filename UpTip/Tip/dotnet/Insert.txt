@@ -1,0 +1,37 @@
+        public void Insertlog_call_telecc(log_call_teleccBOL insert)
+        {
+            CarLoanDataDataContext db = new CarLoanDataDataContext(ConnectionInfo.ConnectionString);
+            db.Connection.Open();
+            db.Transaction = db.Connection.BeginTransaction();
+            try
+            {
+                string sqlmaxid = @" select max(id) as maxid from log_call_telecc ";
+                var maxid = db.ExecuteQuery<int>(sqlmaxid).FirstOrDefault();
+
+                string sql = @" insert into log_call_telecc 
+                                        (id     ,agent   , custname     , mobile    , contact_reason    ,lastaction ,color  ,media  ,predictive_id) 
+                                values  (@id  ,'@agent','@custname'   , '@mobile' ,'@contact_reason'  ,getdate()  ,'@color' ,'CL'   ,@predictive_id) ";
+
+                sql = sql.Replace("@id", Convert.ToString(maxid + 1));
+                sql = sql.Replace("@agent", insert.agent);
+                sql = sql.Replace("@custname", insert.custname);
+                sql = sql.Replace("@mobile", insert.mobile);
+                sql = sql.Replace("@contact_reason", insert.contact_reason);
+                sql = sql.Replace("@color", insert.color);
+                sql = sql.Replace("@predictive_id", insert.predictive_id.ToString());
+
+                db.ExecuteCommand(sql);
+                db.Transaction.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                if (db.Transaction != null)
+                    db.Transaction.Rollback();
+            }
+            finally
+            {
+                db.Transaction.Dispose();
+                db.Connection.Close();
+            }
+        }

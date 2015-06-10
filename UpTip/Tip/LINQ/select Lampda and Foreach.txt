@@ -1,0 +1,20 @@
+(dtTransections.AsEnumerable()
+.Where(a => a.Field<Int32>("ListID") == Convert.ToInt32(r["ListID"].ToString())
+                    && a.Field<Int32>("EmpCode") == Convert.ToInt32(r["EmpCode"])
+                    && a.Field<string>("Agent") == r["Agent"].ToString()
+                    && a.Field<Int32>("predictive_id") == Convert.ToInt32(r["predictive_id"].ToString())
+                    )
+                .Select(b => new QATransactionList
+                {
+                    TransactionID = max,
+                    ListID = b.Field<int>("ListID"),
+                    Filename = b.Field<string>("FileName"),
+                    Servername = b.Field<string>("ServerName"),
+                    ContactReason = b.Field<string>("ContactReason"),
+                    Remark = b.Field<string>("remark"),
+                    CallTypeID = b.Field<int>("CallTypeID"),
+                    PredictiveID = b.Field<int>("predictive_id"),
+                    callstart = b.Field<DateTime>("callstart"),
+                    callend = b.Field<DateTime>("callend")
+                })).ToList()
+                .ForEach(DetailList => TransactionDetailList.Add(DetailList));  // Add Transaction Detail List

@@ -1,0 +1,3 @@
+ string sql = " exec UpdateSupTeamTransaction ";
+                CallQAModel.CommandTimeout = 0;
+                CallQAModel.ExecuteCommand(sql);

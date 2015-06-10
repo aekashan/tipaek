@@ -1,0 +1,16 @@
+            using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+            {
+                var query = (from a in db.QATransactionUsers
+                             join b in db.QATransactions on a.TransactionID equals b.TransactionID
+                            where a.UserID == UserID
+                            && b.SystemID == SystemID
+                            && b.CreateDate.Value.Date == dalDistributeDate.GetMaxDateCreateDate(SystemID)
+                            && a.EnableFlag == null
+                            select a).Take(Convert.ToInt16(CountUpdateFile)).ToList();
+
+                foreach (QATransactionUser qa in query)
+                {
+                    qa.EnableFlag = 'Y';
+                }
+                db.SubmitChanges();
+            }

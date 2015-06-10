@@ -1,0 +1,29 @@
+List<QATransaction> TransactionHeader = new List<QATransaction>();
+
+foreach (DataRow r in dtTMPTransectionsHeader.Rows)
+{
+InsertHeader(SystemId, CreateDate, DepartmentID, TransactionHeader, r, max, Flag);
+
+}
+
+        private static void InsertHeader(Int32 SystemId, DateTime CreateDate, Int32 DepartmentID, List<QATransaction> TransactionHeader, DataRow r, int max,char Flag)
+        {
+
+            QATransaction QATrans = new QATransaction();
+            QATrans.TransactionID = max;
+            QATrans.EmpCode = Convert.ToInt32(r["EmpCode"].ToString());
+            QATrans.AgentID = r["Agent"].ToString();
+            QATrans.DepartmentID = DepartmentID;
+            QATrans.SystemID = SystemId;
+            QATrans.AgeWork = r["AgeWork"].ToString();
+            QATrans.EnableFlag = Flag;
+            QATrans.CreateDate = CreateDate;
+            QATrans.UpdateDate = DateTime.Now;
+            QATrans.CreateBy = 1;
+            QATrans.UpdateBy = 1;
+
+            TransactionHeader.Add(QATrans); // Add Transaction Header
+        }
+
+
+CallQAModel.QATransactions.InsertAllOnSubmit(TransactionHeader);

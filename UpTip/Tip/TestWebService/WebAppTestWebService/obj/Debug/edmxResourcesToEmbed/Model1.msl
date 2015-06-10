@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SilkspanModelStoreContainer" CdmEntityContainer="SilkspanEntities">
+    <EntitySetMapping Name="redbook_basem_car">
+      <EntityTypeMapping TypeName="SilkspanModel.redbook_basem_car">
+        <MappingFragment StoreEntitySet="redbook_basem_car">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name_car" ColumnName="name_car" />
+          <ScalarProperty Name="type_car" ColumnName="type_car" />
+          <ScalarProperty Name="year_car" ColumnName="year_car" />
+          <ScalarProperty Name="group_car" ColumnName="group_car" />
+          <ScalarProperty Name="cc_car" ColumnName="cc_car" />
+          <ScalarProperty Name="base_premium" ColumnName="base_premium" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="seat" ColumnName="seat" />
+          <ScalarProperty Name="Min_Premium" ColumnName="Min_Premium" />
+          <ScalarProperty Name="Max_Premium" ColumnName="Max_Premium" />
+          <ScalarProperty Name="body_type" ColumnName="body_type" />
+          <ScalarProperty Name="engine_size" ColumnName="engine_size" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

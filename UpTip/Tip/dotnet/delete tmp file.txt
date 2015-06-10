@@ -1,0 +1,35 @@
+            //Filename : OUT20010-20140331-091446-1396232086.2438.gsm
+            List<ModelDeleteSoundFile> FileCreateDate = new List<ModelDeleteSoundFile>();
+
+            string[] fileNameSoundList = Directory.GetFiles(Connections.pathDownloadSoundFile, "*.gsm");
+
+            foreach (var item in fileNameSoundList)
+	        {	            
+                FileCreateDate.Add(new ModelDeleteSoundFile{
+                                                            CreateDate = File.GetLastWriteTime(item)//หาวันที่มีการดาวน์โหลดไฟล์/วันที่มีการ Modify
+                                                            ,Filename = item  });
+	        }
+
+            string Year = string.Format("{0:yyyy}", DateTime.Now.AddMonths(-2));
+            string Month = string.Format("{0:MM}", DateTime.Now.AddMonths(-2));
+
+            var FindTimeToBack2MonthList = (from a in FileCreateDate
+                                            where a.CreateDate.Date.Year.ToString() == Year 
+                                                  && a.CreateDate.Date.Month.ToString("#00") == Month//หาวันที่มีการดาวน์โหลดไฟล์/วันที่มีการ Modify ย้อนหลัง 2 เดือน
+                                           select a.Filename).ToList();
+
+            foreach (var fileName in FindTimeToBack2MonthList)
+            {
+                if (System.IO.File.Exists(fileName))
+                {
+                    try
+                    {
+                        System.IO.File.Delete(fileName);//Delete File
+                    }
+                    catch (System.IO.IOException e)
+                    {
+                        Console.WriteLine(e.Message);
+                        return;
+                    }
+                }
+            }

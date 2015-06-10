@@ -1,0 +1,32 @@
+CarLoanDataDataContext db = new CarLoanDataDataContext(ConnectionInfo.ConnectionString);
+            db.Connection.Open();
+            db.Transaction = db.Connection.BeginTransaction();
+            try
+            {
+                string sql = @" select max(id) as maxid from tele_upload ";
+                var maxid = db.ExecuteQuery<int>(sql).FirstOrDefault();
+
+                tele_upload tele_upload = new tele_upload();
+                tele_upload.ID = maxid + 1;
+                tele_upload.pid = update.pid;
+                tele_upload.applicationdate = DateTime.Now;
+
+              
+                tele_upload.nation = update.nation;
+                tele_upload.fmt = update.fmt;
+
+                db.tele_uploads.InsertOnSubmit(tele_upload);
+                db.SubmitChanges();
+                db.Transaction.Commit();
+
+            }
+            catch (Exception ex)
+            {
+                if (db.Transaction != null)
+                    db.Transaction.Rollback();
+            }
+            finally
+            {
+                db.Transaction.Dispose();
+                db.Connection.Close();
+            }

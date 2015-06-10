@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SilkspanModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="SilkspanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="redbook_basem_car" EntityType="SilkspanModel.redbook_basem_car" />
+  </EntityContainer>
+  <EntityType Name="redbook_basem_car">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name_car" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="type_car" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="year_car" Type="Int32" />
+    <Property Name="group_car" Type="Int32" />
+    <Property Name="cc_car" Type="Int32" />
+    <Property Name="base_premium" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="seat" Type="Int32" />
+    <Property Name="Min_Premium" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Max_Premium" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="body_type" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+    <Property Name="engine_size" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+  </EntityType>
+</Schema>

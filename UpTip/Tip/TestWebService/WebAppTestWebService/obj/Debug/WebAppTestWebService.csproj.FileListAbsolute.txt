@@ -1,0 +1,11 @@
+C:\Documents and Settings\Akachan\Desktop\TestWebService\WebAppTestWebService\bin\WebAppTestWebService.dll
+C:\Documents and Settings\Akachan\Desktop\TestWebService\WebAppTestWebService\bin\WebAppTestWebService.pdb
+C:\Documents and Settings\Akachan\Desktop\TestWebService\WebAppTestWebService\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Akachan\Desktop\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.dll
+C:\Documents and Settings\Akachan\Desktop\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.pdb
+C:\Documents and Settings\Akachan\Desktop\TestWebService\WebAppTestWebService\bin\Newtonsoft.Json.dll
+D:\aek\TestWebService\WebAppTestWebService\bin\WebAppTestWebService.dll
+D:\aek\TestWebService\WebAppTestWebService\bin\WebAppTestWebService.pdb
+D:\aek\TestWebService\WebAppTestWebService\obj\Debug\ResolveAssemblyReference.cache
+D:\aek\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.dll
+D:\aek\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.pdb

@@ -1,0 +1,32 @@
+Declare @individual varchar(20)
+declare @print		char(100)
+declare @SQL varchar(max)
+--declare @id		char(100)
+declare @kk		varchar(max)
+set @individual = null
+set @id = '1,3026,3028,3030,3032'
+set @print = '5'
+--
+--print SUBSTRING(@id, LEN('1' + ',') + 1, LEN(@id))
+
+--WHILE LEN(@id) > 0
+--BEGIN
+--    IF PATINDEX('%,%',@id) > 0
+--    BEGIN
+--        SET @individual = SUBSTRING(@id, 0, PATINDEX('%,%',@id))
+--        @print =  @print+','+@individual
+--		print @print
+--
+--        SET @id = SUBSTRING(@id, LEN(@individual + ',') + 1, LEN(@id))
+--		
+--    END    
+--    ELSE
+--    BEGIN
+--        SET @individual = @id
+--        SET @id = NULL
+--        SELECT @individual
+--    END
+----
+----	@kk = @kk + @print
+--
+--END

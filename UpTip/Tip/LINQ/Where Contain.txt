@@ -1,0 +1,22 @@
+            using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+            {
+                var dataLongCall = (from a in db.QATransactionLists
+                                    join b in db.QATransactions on a.TransactionID equals b.TransactionID
+                                    where b.CreateDate.Value.Date == dalDistributeDate.GetMaxDateCreateDate(2)//2 คือ shortcall
+                                           && b.SystemID == 2
+                                    select a.ListID).ToList();
+
+                var ListidByAgent = (from a in DataShortCallFileAllList
+                                     where a.Agent == AgentList
+                                          && a.EmpCode == EmpCode
+                                          && !dataLongCall.Contains(a.listid)
+                                     select a).ToList<ModelFilename>();
+                return ListidByAgent;
+            }
+
+--- Where Hard Code
+  var ListidByAgent = (from a in DataShortCallFileAllList
+                                     where a.Agent == AgentList
+                                          && a.EmpCode == EmpCode
+                                          && (new string[] { "Matt", "Joanne", "Robert" }).Contains(a.listid.ToString())
+                                     select a).ToList<ModelFilename>();

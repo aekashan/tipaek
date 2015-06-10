@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SilkspanModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SilkspanModelStoreContainer">
+    <EntitySet Name="redbook_basem_car" EntityType="SilkspanModel.Store.redbook_basem_car" store:Type="Tables" store:Schema="dbo" store:Name="redbook_basem_car">
+      <DefiningQuery>SELECT 
+      [redbook_basem_car].[id] AS [id], 
+      [redbook_basem_car].[name_car] AS [name_car], 
+      [redbook_basem_car].[type_car] AS [type_car], 
+      [redbook_basem_car].[year_car] AS [year_car], 
+      [redbook_basem_car].[group_car] AS [group_car], 
+      [redbook_basem_car].[cc_car] AS [cc_car], 
+      [redbook_basem_car].[base_premium] AS [base_premium], 
+      [redbook_basem_car].[weight] AS [weight], 
+      [redbook_basem_car].[seat] AS [seat], 
+      [redbook_basem_car].[Min_Premium] AS [Min_Premium], 
+      [redbook_basem_car].[Max_Premium] AS [Max_Premium], 
+      [redbook_basem_car].[body_type] AS [body_type], 
+      [redbook_basem_car].[engine_size] AS [engine_size], 
+      [redbook_basem_car].[status] AS [status]
+      FROM [dbo].[redbook_basem_car] AS [redbook_basem_car]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Silkspan.dbo.redbook_basem_car' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="redbook_basem_car">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name_car" Type="varchar" MaxLength="50" />
+    <Property Name="type_car" Type="varchar" MaxLength="250" />
+    <Property Name="year_car" Type="int" />
+    <Property Name="group_car" Type="int" />
+    <Property Name="cc_car" Type="int" />
+    <Property Name="base_premium" Type="money" />
+    <Property Name="weight" Type="float" />
+    <Property Name="seat" Type="int" />
+    <Property Name="Min_Premium" Type="money" />
+    <Property Name="Max_Premium" Type="money" />
+    <Property Name="body_type" Type="varchar" MaxLength="150" />
+    <Property Name="engine_size" Type="int" />
+    <Property Name="status" Type="varchar" MaxLength="5" />
+  </EntityType>
+</Schema>

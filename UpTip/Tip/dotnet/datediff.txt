@@ -1,0 +1,4 @@
+ if (System.Data.Linq.SqlClient.SqlMethods.DateDiffDay(Convert.ToDateTime(update.CallDateDay + " " + update.CallDateHour + ":" + update.CallDateMinute), DateTime.Now) == 0 && update.countVOIPCall >= 8)
+                {
+                    
+                }

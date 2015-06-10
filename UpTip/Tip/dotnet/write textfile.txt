@@ -1,0 +1,15 @@
+                Console.WriteLine(Falllist);
+
+                TextWriter tw = new StreamWriter(@"d:\date.txt");
+                tw.WriteLine(Falllist);
+                tw.WriteLine(Falllist);
+                // close the stream
+                tw.Close();
+                // read the text file back ...
+                // create reader & open file
+                TextReader tr = new StreamReader(@"d:\date.txt");
+
+                Console.WriteLine("test");
+
+                Console.Write("\nPress Enter to exit ...");
+                Console.Read();

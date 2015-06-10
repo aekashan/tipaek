@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="WSGetMake">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ac_only" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMakeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetMakeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMakeYear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ac_only" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_brand_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMakeYearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetMakeYearResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetModel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ac_only" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_brand_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regis_year_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetModelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetModelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetModelDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ac_only" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_brand_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regis_year_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_model_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetModelDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetModelDescriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetCarInsuredAV">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="car_brand_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="regis_year_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_model_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sub_model_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetCarInsuredAVResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetCarInsuredAVResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMotorCodeAC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="car_brand_value" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="car_model_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMotorCodeACResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetMotorCodeACResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetProvinceAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetProvinceAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetProvinceAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetAmphurAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetAmphurAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetAmphurAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetTumbonAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="province_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amphur_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetTumbonAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetTumbonAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetProvinceLicense">
+        <s:complexType />
+      </s:element>
+      <s:element name="WSGetProvinceLicenseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetProvinceLicenseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetBeneficiary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Beneficiary_Code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Beneficiary_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetBeneficiaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetBeneficiaryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetCountry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="language" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetCountryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetCountryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMotorCodeAVAC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="motor_code_av" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WSGetMotorCodeAVACResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WSGetMotorCodeAVACResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WSGetMakeSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetMake" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMakeSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetMakeResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMakeYearSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetMakeYear" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMakeYearSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetMakeYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetModelSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetModel" />
+  </wsdl:message>
+  <wsdl:message name="WSGetModelSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetModelDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetModelDescription" />
+  </wsdl:message>
+  <wsdl:message name="WSGetModelDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetModelDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetCarInsuredAVSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetCarInsuredAV" />
+  </wsdl:message>
+  <wsdl:message name="WSGetCarInsuredAVSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetCarInsuredAVResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMotorCodeACSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetMotorCodeAC" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMotorCodeACSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetMotorCodeACResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetProvinceAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetProvinceAddress" />
+  </wsdl:message>
+  <wsdl:message name="WSGetProvinceAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetProvinceAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetAmphurAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetAmphurAddress" />
+  </wsdl:message>
+  <wsdl:message name="WSGetAmphurAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetAmphurAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetTumbonAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetTumbonAddress" />
+  </wsdl:message>
+  <wsdl:message name="WSGetTumbonAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetTumbonAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetProvinceLicenseSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetProvinceLicense" />
+  </wsdl:message>
+  <wsdl:message name="WSGetProvinceLicenseSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetProvinceLicenseResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetBeneficiarySoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetBeneficiary" />
+  </wsdl:message>
+  <wsdl:message name="WSGetBeneficiarySoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetBeneficiaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetCountrySoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetCountry" />
+  </wsdl:message>
+  <wsdl:message name="WSGetCountrySoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMotorCodeAVACSoapIn">
+    <wsdl:part name="parameters" element="tns:WSGetMotorCodeAVAC" />
+  </wsdl:message>
+  <wsdl:message name="WSGetMotorCodeAVACSoapOut">
+    <wsdl:part name="parameters" element="tns:WSGetMotorCodeAVACResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="WSGetMake">
+      <wsdl:input message="tns:WSGetMakeSoapIn" />
+      <wsdl:output message="tns:WSGetMakeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMakeYear">
+      <wsdl:input message="tns:WSGetMakeYearSoapIn" />
+      <wsdl:output message="tns:WSGetMakeYearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetModel">
+      <wsdl:input message="tns:WSGetModelSoapIn" />
+      <wsdl:output message="tns:WSGetModelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetModelDescription">
+      <wsdl:input message="tns:WSGetModelDescriptionSoapIn" />
+      <wsdl:output message="tns:WSGetModelDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetCarInsuredAV">
+      <wsdl:input message="tns:WSGetCarInsuredAVSoapIn" />
+      <wsdl:output message="tns:WSGetCarInsuredAVSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMotorCodeAC">
+      <wsdl:input message="tns:WSGetMotorCodeACSoapIn" />
+      <wsdl:output message="tns:WSGetMotorCodeACSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetProvinceAddress">
+      <wsdl:input message="tns:WSGetProvinceAddressSoapIn" />
+      <wsdl:output message="tns:WSGetProvinceAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetAmphurAddress">
+      <wsdl:input message="tns:WSGetAmphurAddressSoapIn" />
+      <wsdl:output message="tns:WSGetAmphurAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetTumbonAddress">
+      <wsdl:input message="tns:WSGetTumbonAddressSoapIn" />
+      <wsdl:output message="tns:WSGetTumbonAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetProvinceLicense">
+      <wsdl:input message="tns:WSGetProvinceLicenseSoapIn" />
+      <wsdl:output message="tns:WSGetProvinceLicenseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetBeneficiary">
+      <wsdl:input message="tns:WSGetBeneficiarySoapIn" />
+      <wsdl:output message="tns:WSGetBeneficiarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetCountry">
+      <wsdl:input message="tns:WSGetCountrySoapIn" />
+      <wsdl:output message="tns:WSGetCountrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMotorCodeAVAC">
+      <wsdl:input message="tns:WSGetMotorCodeAVACSoapIn" />
+      <wsdl:output message="tns:WSGetMotorCodeAVACSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSGetMake">
+      <soap:operation soapAction="http://tempuri.org/WSGetMake" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMakeYear">
+      <soap:operation soapAction="http://tempuri.org/WSGetMakeYear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetModel">
+      <soap:operation soapAction="http://tempuri.org/WSGetModel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetModelDescription">
+      <soap:operation soapAction="http://tempuri.org/WSGetModelDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetCarInsuredAV">
+      <soap:operation soapAction="http://tempuri.org/WSGetCarInsuredAV" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMotorCodeAC">
+      <soap:operation soapAction="http://tempuri.org/WSGetMotorCodeAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetProvinceAddress">
+      <soap:operation soapAction="http://tempuri.org/WSGetProvinceAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetAmphurAddress">
+      <soap:operation soapAction="http://tempuri.org/WSGetAmphurAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetTumbonAddress">
+      <soap:operation soapAction="http://tempuri.org/WSGetTumbonAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetProvinceLicense">
+      <soap:operation soapAction="http://tempuri.org/WSGetProvinceLicense" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetBeneficiary">
+      <soap:operation soapAction="http://tempuri.org/WSGetBeneficiary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetCountry">
+      <soap:operation soapAction="http://tempuri.org/WSGetCountry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMotorCodeAVAC">
+      <soap:operation soapAction="http://tempuri.org/WSGetMotorCodeAVAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WSGetMake">
+      <soap12:operation soapAction="http://tempuri.org/WSGetMake" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMakeYear">
+      <soap12:operation soapAction="http://tempuri.org/WSGetMakeYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetModel">
+      <soap12:operation soapAction="http://tempuri.org/WSGetModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetModelDescription">
+      <soap12:operation soapAction="http://tempuri.org/WSGetModelDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetCarInsuredAV">
+      <soap12:operation soapAction="http://tempuri.org/WSGetCarInsuredAV" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMotorCodeAC">
+      <soap12:operation soapAction="http://tempuri.org/WSGetMotorCodeAC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetProvinceAddress">
+      <soap12:operation soapAction="http://tempuri.org/WSGetProvinceAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetAmphurAddress">
+      <soap12:operation soapAction="http://tempuri.org/WSGetAmphurAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetTumbonAddress">
+      <soap12:operation soapAction="http://tempuri.org/WSGetTumbonAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetProvinceLicense">
+      <soap12:operation soapAction="http://tempuri.org/WSGetProvinceLicense" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetBeneficiary">
+      <soap12:operation soapAction="http://tempuri.org/WSGetBeneficiary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetCountry">
+      <soap12:operation soapAction="http://tempuri.org/WSGetCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WSGetMotorCodeAVAC">
+      <soap12:operation soapAction="http://tempuri.org/WSGetMotorCodeAVAC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="https://ebizuat.lmginsurance.co.th/Webservices/NewQ2I.Webservice/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="https://ebizuat.lmginsurance.co.th/Webservices/NewQ2I.Webservice/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

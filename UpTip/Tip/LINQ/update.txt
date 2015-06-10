@@ -1,0 +1,77 @@
+        public void UpdateOnlineNocall(InsertOuboundBOL update)
+        {
+            CarLoanDataDataContext db = new CarLoanDataDataContext(ConnectionInfo.ConnectionString);
+            db.Connection.Open();
+            db.Transaction = db.Connection.BeginTransaction();
+            try
+            {
+                var query = (from a in db.car_loans
+                              where a.tid == update.TID
+                              select a).FirstOrDefault();
+
+                if (query != null)
+                {
+                    query.calldate = DateTime.Now;
+                    query.appointfdate = GetNextTime(update);
+                    query.reason = update.telecc_status;
+                
+                    db.SubmitChanges();
+                    db.Transaction.Commit();
+                }             
+            }
+            catch (Exception ex)
+            {
+                if (db.Transaction != null)
+                    db.Transaction.Rollback();
+            }
+            finally
+            {
+                db.Transaction.Dispose();
+                db.Connection.Close();
+            }
+        }
+
+
+
+
+
+                using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+                {
+                    var CreateDateIsNotNullList = (from a in db.QATransactions
+                                                   join e in db.QATransactionUsers on a.TransactionID equals e.TransactionID into lrs2
+                                                   from e in lrs2.DefaultIfEmpty()
+                                                   join d in db.QADepartments on a.DepartmentID equals d.DepartmentID
+                                                   join b in db.QATransactionLists on a.TransactionID equals b.TransactionID
+                                                   join c in db.QATransactionScores on a.TransactionID equals c.TransactionID into lrs
+                                                   from c in lrs.DefaultIfEmpty()
+                                                   where a.CreateDate.Value.Date == dalDistributeDate.GetMaxDateCreateDate(SystemID)
+                                                   && a.SystemID == SystemID
+                                                   && d.EnableFlag != 'N'
+                                                   && e.ListenDate == null
+                                                   //&& System.Data.Linq.SqlClient.SqlMethods.DateDiffDay(e.ListenDate, DateTime.Now) != 0
+                                                   group a by new
+                                                   {
+                                                       b.ListID
+                                                       ,
+                                                       a.AgeWork
+                                                       ,
+                                                       a.DepartmentID
+                                                       ,
+                                                       a.SystemID
+                                                       ,
+                                                       a.CreateDate
+                                                   }
+                                                       into d
+                                                       orderby d.Key.SystemID, d.Key.AgeWork, d.Key.DepartmentID descending
+                                                       select new ModelQATransaction
+                                                       {
+                                                           ListId = d.Key.ListID
+                                                           ,
+                                                           AgeWork = d.Key.AgeWork
+                                                           ,
+                                                           DepartmentID = d.Key.DepartmentID
+                                                           ,
+                                                           SystemID = d.Key.SystemID
+                                                           ,
+                                                           CreateDate = d.Key.CreateDate
+                                                       }).Take(Row);

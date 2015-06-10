@@ -1,0 +1,27 @@
+        public void CreateDirectory()
+        {
+            FtpWebRequest reqFTP = null;
+            Stream ftpStream = null;
+
+            try
+            {
+                //Create Directory
+                reqFTP = (FtpWebRequest)FtpWebRequest.Create("ftp://192.168.0.53/silkspan_ssl/supplier/payment/inform_upload_file/" + tid);
+                reqFTP.Method = WebRequestMethods.Ftp.MakeDirectory;
+                reqFTP.UseBinary = true;
+                reqFTP.Credentials = new NetworkCredential("it-akachan", "GsdKL62S");
+                FtpWebResponse response = (FtpWebResponse)reqFTP.GetResponse();
+                ftpStream = response.GetResponseStream();
+                ftpStream.Close();
+                response.Close();
+            }
+            catch
+            {
+
+            }
+
+            WebClient FtpClient1 = new WebClient();
+            FtpClient1.Credentials = new NetworkCredential("it-akachan", "GsdKL62S");
+            FtpClient1.UploadData("ftp://192.168.10.105/silkspan_ssl/supplier/payment/inform_upload_file/" + tid + "/" + fileName, fileImage);
+            FtpClient1.Dispose();
+        }

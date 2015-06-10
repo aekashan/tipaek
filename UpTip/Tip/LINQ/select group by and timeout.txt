@@ -1,0 +1,25 @@
+                    db.CommandTimeout = 0;
+                    var CreateDateIsNotNullList = (from a in db.QATransactions
+                                                   join b in db.QATransactionLists on a.TransactionID equals b.TransactionID
+                                                   join f in db.QATransactionUsers on a.TransactionID equals f.TransactionID into lrs2
+                                                   from f in lrs2.DefaultIfEmpty()
+                                                   join e in db.QADepartments on a.DepartmentID equals e.DepartmentID
+                                                   join c in db.DataScoreComments on a.TransactionID equals c.TransactionID into lrs
+                                                   from c in lrs.DefaultIfEmpty()
+                                                   orderby a.SystemID, a.AgeWork, a.DepartmentID ascending
+                                                   where c.TransactionCreateDate == null
+                                                   && e.EnableFlag != 'N'
+                                                   && a.CreateDate.Value.Date == dalDistributeDate.GetMaxDateCreateDate(SystemID)
+                                                   && a.SystemID == SystemID
+                                                   && f.ListenDate == null
+                                                   // && System.Data.Linq.SqlClient.SqlMethods.DateDiffDay(f.ListenDate,DateTime.Now) != 0
+                                                   group a by new
+                                                   {
+                                                       b.ListID
+                                                   }
+                                                       into d
+                                                       select new ModelQATransaction
+                                                       {
+                                                           ListId = d.Key.ListID
+                                                       }).Distinct();
+                    return CreateDateIsNotNullList.ToList<ModelQATransaction>();

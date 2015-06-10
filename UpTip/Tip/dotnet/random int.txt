@@ -1,0 +1,53 @@
+Random r = new Random();
+            List<ModelQATransaction> QaTeamRandom = new List<ModelQATransaction>();
+            //LINQToDataTable LINQToDataTable = new LINQToDataTable();
+
+            using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+            {
+                var data = (from a in db.QATransactionUsers
+                            join b in db.QATransactions on a.TransactionID equals b.TransactionID
+                            where b.CreateDate == dalDistributeDate.GetMaxDateCreateDate(SystemID)
+                                && b.SystemID == SystemID
+                            select a).FirstOrDefault();
+                if (data != null)//แจกลิสต์ในครั้งแรกหรือไม่
+                {
+
+                    var QaUserList = (from a in db.QATransactions
+                                      join b in db.QATransactionUsers on a.TransactionID equals b.TransactionID
+                                      where a.CreateDate == dalDistributeDate.GetMaxDateCreateDate(SystemID)
+                                         && a.SystemID == SystemID
+                                      group b by b.UserID into g
+                                      orderby g.Count() ascending
+                                      select new ModelQATransaction
+                                      {
+                                          UserID = g.Key
+                                          ,Count = g.Count()
+                                      });//หา QA ที่อยู่ในรอบนี้ และ Count จำนวน list ที่ได้มา
+
+                    var QaUserID = from a in QATeam
+                                   select new ModelQATransaction { UserID = a.UserID };//หา QA ที่มาทำงาน
+                     
+                    QaTeamRandom = (from a in QaUserID
+                                    join b in QaUserList on a.UserID equals b.UserID into leftUserList
+                                    from c in leftUserList.DefaultIfEmpty()
+                                    select new ModelQATransaction { UserID = a.UserID, Count = (c== null ? 0 : c.Count) }).ToList();//รวม QAที่เคยแจกลิสต์ กับQAที่กำลังแจกรอบใหม่
+
+                    QaTeamRandom = QaTeamRandom.OrderBy(a => a.Count).ToList(); //เรียงตามลำดับคนที่ได้ลิสต์น้อยที่สุด
+
+                }
+                else
+                {
+                    foreach (var item in QATeam)
+                    {
+                        int rInt = r.Next(0, 9);
+                        item.RandomQA = rInt;
+                    }
+
+                    QaTeamRandom = (from a in QATeam
+                                    orderby a.RandomQA ascending
+                                    select a).ToList();
+                }
+
+                return QaTeamRandom;
+
+            }

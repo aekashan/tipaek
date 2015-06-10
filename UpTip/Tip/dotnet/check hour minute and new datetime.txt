@@ -1,0 +1,20 @@
+                if (update.CallCount >= 4 && update.countVOIPCall >= 8)
+                {
+                    query.appointfdate = Convert.ToDateTime(update.appointfdate + " 08:30");
+                }
+                else if (DateTime.Now.Hour <= 10 && DateTime.Now.Minute <= 30)
+                {
+                    query.appointfdate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 11, Minute, 0);
+                }
+                else if (DateTime.Now.Hour < 13)
+                {
+                    query.appointfdate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 14, Minute, 0);
+                }
+                else if (DateTime.Now.Hour <= 15 && DateTime.Now.Minute <= 30)
+                {
+                    query.appointfdate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 16, Minute, 0);
+                }
+                else
+                {
+                    query.appointfdate = Convert.ToDateTime(update.appointfdate + " 08:30");
+                }

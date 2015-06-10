@@ -1,0 +1,16 @@
+List<ModelFilename> FileInAgent = new List<ModelFilename>();                    
+
+FileInAgent.Add(new ModelFilename() {   listid      = GroupAgentList[j].listid
+                                                            ,Agent      = GroupAgentList[j].Agent
+                                                            ,servername = GroupAgentList[j].servername
+                                                            ,FileName   = GroupAgentList[j].FileName
+                                                            ,Department = GroupAgentList[j].Department
+                                                            ,EmpCode    = GroupAgentList[j].EmpCode
+                                                            ,remark     = GroupAgentList[j].remark
+                                                            ,AgeWork    = GroupAgentList[j].AgeWork
+                                                            ,CallTypeID =  GroupAgentList[j].CallTypeID
+                                                            ,ContactReason = GroupAgentList[j].ContactReason
+                                                            ,predictive_id = GroupAgentList[j].predictive_id
+                                                            ,callstart = GroupAgentList[j].callstart
+                                                            ,callend = GroupAgentList[j].callend
+                                                    });

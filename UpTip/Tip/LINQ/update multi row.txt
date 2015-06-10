@@ -1,0 +1,18 @@
+            using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+            {
+                var query = from a in db.QATransactions
+                            where a.CreateDate == null
+                            select a;
+
+                if (query != null)
+                {
+                    foreach (QATransaction item in query)
+                    {
+                        item.CreateDate = dalDistributeDate.GetMaxDateCreateDate(systemID).AddDays(7);
+                    }
+                    db.SubmitChanges();
+                }
+
+
+
+            }

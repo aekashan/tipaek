@@ -1,0 +1,6 @@
+            List<int> ListidByAgent = (from a in dtFileName.AsEnumerable()
+                                       where a.Field<string>("Agent") == AgentList
+                                            && a.Field<int>("EmpCode") == EmpCode
+                                       group a by a.Field<int>("listid") into g
+                                       select g.Key).ToList<int>();
+            return ListidByAgent;

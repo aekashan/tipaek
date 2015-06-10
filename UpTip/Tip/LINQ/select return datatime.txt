@@ -1,0 +1,9 @@
+        public static DateTime GetMaxDateCreateDate(int systemID)
+        {
+            using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+            {
+                var DateMaxCreateDate = db.ExecuteQuery<DateTime>("SELECT  isnull(max(CreateDate),getdate()) CreateDate FROM QATransaction where systemid = " + systemID).FirstOrDefault();
+
+                return Convert.ToDateTime(DateMaxCreateDate.ToShortDateString());
+            }
+        }

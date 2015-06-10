@@ -1,0 +1,8 @@
+            using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+            {
+                var query = (from a in db.QATransactions
+                             where a.TransactionID == TransactionID
+                             select a).FirstOrDefault();
+                db.QATransactions.DeleteOnSubmit(query);
+                db.SubmitChanges();
+            }

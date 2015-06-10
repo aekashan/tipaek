@@ -1,0 +1,2 @@
+insert into tablename1
+select * from server01.dbtest.dbo.tablename1

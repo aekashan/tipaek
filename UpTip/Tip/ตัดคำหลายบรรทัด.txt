@@ -1,0 +1,34 @@
+ .space-content::before
+        {
+            color:White;
+            content: '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _';
+        }
+        .dot-content
+        {
+            border-bottom:2px dotted #000;
+            font-size: 15.5pt;
+        }
+        
+        .body-content
+        {
+            font-family: AngsanaUPC;
+            font-size: 22.5pt;
+            font-style: normal;
+        }
+        .div-content
+        {
+            width: 900px; 
+            height: 3.5em;
+            max-height:4em; 
+            overflow: hidden; 
+            padding-bottom: 25px;
+        }
+
+
+
+Use
+
+                <div class="div-content"><span class="body-content">7. ขณะนี้ยังต้องรักษา/ทำกายภาพบำบัดอยู่หรือไม่ </span>
+                    <font class="dot-content"><font class="body-content"><asp:Label ID="lblAccident7" runat="server"  ></asp:Label> </font> 
+                    <span class="space-content"></span></font>                    
+                </div>

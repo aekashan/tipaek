@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8FDA0375-6CD1-4E24-8110-E38D5AC114D0}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UpTip</RootNamespace>
+    <AssemblyName>UpTip</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tip\TestWebService\WebAppTestWebService\Properties\AssemblyInfo.cs" />
+    <Compile Include="Tip\TestWebService\WebAppTestWebService\Properties\Settings.Designer.cs" />
+    <Compile Include="Tip\TestWebService\WebAppTestWebService\Web References\com.tunemotions.www\Reference.cs" />
+    <Compile Include="Tip\TestWebService\WebAppTestWebService\Web References\th.co.lmginsurance.ebizuat\Reference.cs" />
+    <Compile Include="Tip\TestWebService\WebAppTestWebService\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tip\TestWebService\WebAppTestWebService\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Tip\ASP.NET.zip" />
+    <None Include="Tip\Create batFile.docx" />
+    <None Include="Tip\Datatable.docx" />
+    <None Include="Tip\dotnet\process เรียกไฟล์.bat.docx" />
+    <None Include="Tip\Reporting ssrs row data per page.docx" />
+    <None Include="Tip\Shadow.zip" />
+    <None Include="Tip\TestWebService\TestWebService.suo" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\edmxResourcesToEmbed\Model1.csdl" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\edmxResourcesToEmbed\Model1.msl" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\edmxResourcesToEmbed\Model1.ssdl" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\ResolveAssemblyReference.cache" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Properties\Settings.settings" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web References\com.tunemotions.www\Reference.map" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web References\com.tunemotions.www\service.wsdl" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web References\th.co.lmginsurance.ebizuat\Reference.map" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web References\th.co.lmginsurance.ebizuat\service1.wsdl" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web.config" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web.Debug.config" />
+    <None Include="Tip\TestWebService\WebAppTestWebService\Web.Release.config" />
+    <None Include="Tip\Tip_ak.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Tip\dotnet\add list.txt" />
+    <Content Include="Tip\dotnet\check hour minute and new datetime.txt" />
+    <Content Include="Tip\dotnet\convert datatable to list__convert list to datatable.txt" />
+    <Content Include="Tip\dotnet\createDirectory Upload Ftp.txt" />
+    <Content Include="Tip\dotnet\datediff.txt" />
+    <Content Include="Tip\dotnet\delete tmp file.txt" />
+    <Content Include="Tip\dotnet\ftp download file.txt" />
+    <Content Include="Tip\dotnet\Insert.txt" />
+    <Content Include="Tip\dotnet\random int.txt" />
+    <Content Include="Tip\dotnet\write textfile.txt" />
+    <Content Include="Tip\js\digit.txt" />
+    <Content Include="Tip\LINQ\delete.txt" />
+    <Content Include="Tip\LINQ\group Multi.txt" />
+    <Content Include="Tip\LINQ\Insert.txt" />
+    <Content Include="Tip\LINQ\insertAllSubmit.txt" />
+    <Content Include="Tip\LINQ\linq exec store.txt" />
+    <Content Include="Tip\LINQ\select datatable.txt" />
+    <Content Include="Tip\LINQ\select group by and timeout.txt" />
+    <Content Include="Tip\LINQ\select Lampda and Foreach.txt" />
+    <Content Include="Tip\LINQ\select normal.txt" />
+    <Content Include="Tip\LINQ\select return datatime.txt" />
+    <Content Include="Tip\LINQ\select take row.txt" />
+    <Content Include="Tip\LINQ\select take.txt" />
+    <Content Include="Tip\LINQ\update 1 row.txt" />
+    <Content Include="Tip\LINQ\update multi row.txt" />
+    <Content Include="Tip\LINQ\update.txt" />
+    <Content Include="Tip\LINQ\Where Any.txt" />
+    <Content Include="Tip\LINQ\Where Contain.txt" />
+    <Content Include="Tip\SQL\alter table add.sql" />
+    <Content Include="Tip\SQL\convert string to format date all format.sql" />
+    <Content Include="Tip\SQL\convert varchar datetime.sql" />
+    <Content Include="Tip\SQL\if exit table temp.sql" />
+    <Content Include="Tip\SQL\join ใช้ and แทน where.sql" />
+    <Content Include="Tip\SQL\select datediff dateadd.sql" />
+    <Content Include="Tip\SQL\select dense_rank เรียงลำดับ list.sql" />
+    <Content Include="Tip\SQL\select if exits object temptable.sql" />
+    <Content Include="Tip\SQL\Select Information Table.sql" />
+    <Content Include="Tip\SQL\select insert ข้าม base.txt" />
+    <Content Include="Tip\SQL\Select Property.sql" />
+    <Content Include="Tip\SQL\select schema tempdb.sql" />
+    <Content Include="Tip\SQL\select ให้ลง temb ก่อน เพื่อ query เร็วขึ้น.sql" />
+    <Content Include="Tip\SQL\sp_column table.sql" />
+    <Content Include="Tip\SQL\SQL substring replace round .sql" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki.htm" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\0871.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\102caeaab1a06e8abbc614cec4afd96b-59376730e28daee7cbe9c7fd1a19.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\10_5F00_external.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\1401.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\50d9623be41fbe11deb6d67947b4aeb5-e99ec8f3b45f97b38095df2708dc.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\5670.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\59602b3fe27f4bdb4a3ee95b6aa4a092-eca83bf791a0da3e538d8968ca3.css" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\7711.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\8322.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\ai.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\avatar.jpg" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\avatar_002.jpg" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\avatar_003.jpg" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\avatar_004.jpg" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\b372f891784109d35c507df15085dd81-c07155be71352ee9ab45c44538a4.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\b5e66aa3d084313c44fa258b276896f4-dd65fb3b53275bbc808ca50b3a68.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\Bootstrap.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\broker.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\d1653517c66d1e41527de3e7a86a012d-5d4217d6cf82ecfa5bbd4a87d4f.css" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\delicious.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\digg.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\DynamicStyle.css" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\facebook.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\fd70126ba04f419b84d5740d51bc3d98-14e0c332a84e56b6d37629b4d8ca.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\friendfeed.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\icon-rss-small.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\jquery-1.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\jquery.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\less.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\linkedin.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\Megablade.css" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\Megablade.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\messenger.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\metrics.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\more.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\myspace.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\reddit.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\SearchBox.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\slashdot.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\stumbleupon.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\technorati.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\TN-logo.png" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\trans.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\twitter.gif" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\usercard.css" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\Widget.js" />
+    <Content Include="Tip\SQL\T-SQL  RIGHT, LEFT, SUBSTRING and CHARINDEX Functions - TechNet Articles - United States %28English%29 - TechNet Wiki_files\widgets.js" />
+    <Content Include="Tip\SQL\update inner join.sql" />
+    <Content Include="Tip\SQL\where case field.sql" />
+    <Content Include="Tip\SQL\วนลูป Substring.txt" />
+    <Content Include="Tip\SQL\ใช้ datepart คู่กับ weekday เพื่อหาวันอาทิตย์ในช่วงนั้น.sql" />
+    <Content Include="Tip\TestWebService\TestWebService.sln" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\bin\Newtonsoft.Json.dll" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\bin\WebAppTestWebService.dll" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\bin\WebAppTestWebService.pdb" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\TempPE\Model1.Designer.cs.dll" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\TempPE\Web References.com.tunemotions.www.Reference.cs.dll" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\TempPE\Web References.th.co.lmginsurance.ebizuat.Reference.cs.dll" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.csproj.FileListAbsolute.txt" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.dll" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\obj\Debug\WebAppTestWebService.pdb" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\Web References\com.tunemotions.www\service.disco" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\Web References\th.co.lmginsurance.ebizuat\service1.disco" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\WebAppTestWebService.csproj" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\WebAppTestWebService.csproj.user" />
+    <Content Include="Tip\TestWebService\WebAppTestWebService\WebForm1.aspx" />
+    <Content Include="Tip\ตัดคำหลายบรรทัด.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tip\TestWebService\WebAppTestWebService\Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

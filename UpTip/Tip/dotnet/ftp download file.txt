@@ -1,0 +1,59 @@
+        public string DownloadSoundMethod(string fileName, string IpServer)
+        {
+            this.FtpClient = new WebClient();
+            this.FtpClient.Credentials = new NetworkCredential(Connections.Username,Connections.Password);
+            string result = "";
+
+            if (fileName != "" && fileName != string.Empty)
+            {
+                result = DownloadSoundFile("ftp://" + IpServer + "/", "SoundFile", fileName);
+
+                //·Ó«éÓ
+                if (result == "DownloadFail")
+                {
+                    result = DownloadSoundFile("ftp://" + IpServer + "/", "SoundFile", fileName);
+                }
+            }
+
+            FtpClient.Dispose();
+
+            return result;
+        }
+
+
+public string DownloadSoundFile(string ftpAddressPath, string folderSound, string fileName)
+        {
+            string result = string.Empty;
+            try
+            {
+                byte[] FileData = FtpClient.DownloadData(ftpAddressPath + fileName);
+
+                FileStream FileStream;
+                //DirectoryInfo DirInfo = new DirectoryInfo(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", ""), folderSound + "\\")); 
+                DirectoryInfo DirInfo = new DirectoryInfo(Connections.pathDownloadSoundFile);
+                if (!DirInfo.Exists)
+                    DirInfo.Create();
+                //FileStream = File.Create(Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", ""), folderSound + "\\" + fileName));
+                FileStream = File.Create(Connections.pathDownloadSoundFile + fileName);
+                FileStream.Write(FileData, 0, FileData.Length);
+                FileStream.Close();
+                //Console.WriteLine("DownloadSuccess FileName : " + fileName);
+                result = "DownloadSuccess";
+            }
+            catch
+            {
+                //Console.WriteLine("ERROR !!!!  FileName : " + fileName);
+                using (CallQaModelDataContext db = new CallQaModelDataContext(Connections.CallQaulityAssuranceConnect))
+                {
+                    QALog QALog = new QALog();
+                    QALog.LogTypeID = 4;
+                    QALog.LogDetail = fileName;
+                    QALog.CreateDate = DateTime.Now;
+                    db.QALogs.InsertOnSubmit(QALog);
+                    db.SubmitChanges();
+
+                }
+                result = "DownloadFail";
+            }
+            return result;
+        }

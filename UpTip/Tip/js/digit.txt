@@ -1,0 +1,11 @@
+ 
+
+$("#amt2").html(digits(response.amt.toFixed(0)));
+
+
+
+    function digits(val) {
+        if (val != null && val != "") {
+            return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }        
+    }
